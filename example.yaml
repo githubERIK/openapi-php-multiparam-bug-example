@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  title: Example API
+  version: 0.0.1
+servers:
+  - url: 'https://some.example.api.com/v1'
+paths:
+  /notes:
+    get:
+      summary: Returns all notes.
+      operationId: fetchNotes
+      parameters:
+        - in: query
+          name: labelIds
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: true
+      responses:
+        '204':
+          description: An object containing a list of group objects.
+

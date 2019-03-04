@@ -296,6 +296,11 @@ class DefaultApi
         );
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
+
+        echo "FAILED QUERY\n";
+        echo $query;
+
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
